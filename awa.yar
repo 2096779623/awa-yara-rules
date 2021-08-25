@@ -521,8 +521,11 @@ rule Worm_Win32_Ramnit {
         author = "awa"
         hash1 = "bc8745a3434ca183ec03aa3ac608b31f642c563f5038e24816014cb13054b1e1"
     strings:
-        $a = "inflate 1.1.3 Copyright 1995-1998 Mark Adler "
-        $b = "deflate 1.1.3 Copyright 1995-1998 Jean-loup Gailly "
+        $a = "d09f2340818511d396f6aaf844c7e325"
+        $b = "27bb20fdd3e145e4bee3db39ddd6e64c"
+        $c = "5F99C1642A2F4e03850721B4F5D7C3F8"
+        $d = "DA19AC3ADD2F4121AAD84AC5FBCAFC71"
+        $e = "qdZRMHD@=;86421/.-+*)(''&%$$#\"\"!!  "
     condition:
         all of them
 }
