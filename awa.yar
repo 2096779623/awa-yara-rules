@@ -412,6 +412,7 @@ rule Trojan_Win32_FormatAll {
         $a = "%s.%d.tmp"
         $b = "%s %s %s"
         $c = "YNANRC"
+        $d = {69 6E 67 63 68 75 2E 62 61 74}
     condition:
         all of them
 }
