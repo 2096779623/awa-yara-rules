@@ -466,10 +466,7 @@ rule Virus_Win32_disttrack_A {
         author = "awa"
         hash1 = "4f02a9fcd2deb3936ede8ff009bd08662bdb1f365c0f4a78b3757a98c2f40400"
     strings:
-        $a = "Wow64DisableWow64FsRedirection"
-        $b = "Wow64RevertWow64FsRedirection"
-        $c = "c:\\windows\\temp\\out17626867.txt"
-        $d = "Copyright (c) 1992-2004 by P.J. Plauger, licensed by Dinkumware, Ltd. ALL RIGHTS RESERVED."
+        $c = "c:\\windows\\temp\\out17626867.txt" fullword
     condition:
         2 of them
 }
