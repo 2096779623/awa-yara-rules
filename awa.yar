@@ -379,7 +379,6 @@ rule Virus_Win32_Sola {
         hash1 = "f5e13e8071fecbcd2fcd29f201a2fc394269acf4319ece3c9dd18ef7e168ce69"
     strings:
         $a = "shlwapi.dll"
-        $b = "WinRAR SFX"
         $c = "*messages***"
     condition:
         all of them and filesize >= 688KB
@@ -410,7 +409,6 @@ rule Trojan_Win32_FormatAll {
         author = "awa"
         hash1 = "a2da77f846946cffb8ecb05fa9010aef74b199ee0c66cb7f241a3f998e0c31ae"
     strings:
-        $a = "*messages***"
         $b = "%s %s %s"
     condition:
         all of them
@@ -578,18 +576,6 @@ rule Trojan_Ransomware_MineCraft {
         $javaw = "cmd /c taskkill /im javaw.exe /f"
         $filename = "\\desktop\\minecraftcry.exe"
         $url = "cmd /c c:\\windows\\temp\\microminiforwebbrowserold.exe /https://mdownload.mini1.cn/latest/miniworldoffice.exe"
-    condition:
-        all of them
-}
-
-rule Trojan_Ransomware_MiniWorld {
-    meta:
-        description = "Trojan.Ransomware.MiniWorld"
-        date = "2021-08-25"
-        author = "awa"
-        hash1 = "24a163dbbbd12e458bcbcfa3e9707da5c7364369060344f062ef46dbf208169d"
-    strings:
-        $b = "inflate 1.2.8 Copyright 1995-2013 Mark Adler "
     condition:
         all of them
 }
