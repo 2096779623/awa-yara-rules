@@ -409,7 +409,9 @@ rule Trojan_Win32_FormatAll {
         author = "awa"
         hash1 = "a2da77f846946cffb8ecb05fa9010aef74b199ee0c66cb7f241a3f998e0c31ae"
     strings:
+        $a = "%s.%d.tmp"
         $b = "%s %s %s"
+        $c = "YNANRC"
     condition:
         all of them
 }
