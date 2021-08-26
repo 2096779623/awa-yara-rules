@@ -1,4 +1,5 @@
 import "pe"
+import "hash"
 
 rule Backdoor_CobaltStrike_exe_x86
 {
@@ -289,8 +290,9 @@ rule Worm_VBS_HappyTime_A {
         $a = "Rem I am sorry! happy time" fullword
         $b = "HKEY_CURRENT_USER\\Identities\\"
         $c = "\\Software\\Microsoft\\Outlook Express\\5.0\\Mail"
+        $d = "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows Messaging Subsystem\\Profiles\\DefaultProfile"
     condition:
-        any of them
+        all of them and filesize <= 10KB
 }
 
 rule Worm_VBS_LoveLetter_A {
@@ -611,3 +613,5 @@ rule Trojan_Win32_MBRlock{
     condition:
         all of them
 }
+
+
