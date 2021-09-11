@@ -614,18 +614,6 @@ rule Trojan_Win32_MBRlock{
         all of them
 }
 
-rule Trojan_Win32_Dogrobot_Cow {
-    meta:
-        description = "Trojan.Win32.Dogrobot.Cow"
-        date = "2021-08-25"
-        author = "awa"
-        hash1 = "95c9f09b0e1f55ed39c9b4d3815bb757d963bc86bbebe32cf2868c89967a143d"
-    strings:
-        $a = "R6028"
-        $b = "is prog"
-    condition:
-        all of them and filesize <= 40KB
-}
 
 rule BackDoor_SiggenNET_23 {
     meta:
