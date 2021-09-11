@@ -614,4 +614,29 @@ rule Trojan_Win32_MBRlock{
         all of them
 }
 
+rule Trojan_Win32_Dogrobot_Cow {
+    meta:
+        description = "Trojan.Win32.Dogrobot.Cow"
+        date = "2021-08-25"
+        author = "awa"
+        hash1 = "95c9f09b0e1f55ed39c9b4d3815bb757d963bc86bbebe32cf2868c89967a143d"
+    strings:
+        $a = "R6028"
+        $b = "is prog"
+    condition:
+        all of them and filesize <= 40KB
+}
 
+rule BackDoor_SiggenNET_23 {
+    meta:
+        description = "BackDoor.SiggenNET.23"
+        date = "2021-09-11"
+        author = "awa"
+        hash1 = "124023c0cf0524a73dabd6e5bb3f7d61d42dfd3867d699c59770846aae1231ce"
+    strings:
+        $a = "reloc"
+        $b = {24 62 66 35 38 66 63 32 63 2D 36 66 36 35 2D 34 33 36 64 2D 38 66 31 65 2D 32 61 31 62 39 35 37 36 32 38 66 37}
+        $c = {62 37 37 61 35 63 35 36 31 39 33 34 65 30 38 39}
+    condition:
+        all of them
+}
