@@ -268,7 +268,6 @@ rule Virus_Win95_CIH_a {
         $file3 = "MPLIFIER.PIFPK"
         $file4 = "MPlifier.txtPK"
         $file5 = "MPlifier.txt"
-        $keygen1 = "Keygenerator by SlaSk/FALLEN"
         $keygen2 = {77 E2 56 CA 33 83 38 99 33 83 38 99 33 83 38 99 DB 9C 32 99 08 83 38 99 B0 9F 36 99 3D 83 38 99 33 83 39 99 7D 83 38 99 51 9C 2B 99 34 83 38 99 DB 9C 33 99 31 83 38 99 8B 85 3E 99 32 83 38 99 52 69 63 68 33 83 38 99 00}
         $rar1 = "CMPlifier052.exe" ascii
         $rar2 = "MPLIFIER.BAT" ascii
