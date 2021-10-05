@@ -1,3 +1,4 @@
+//By 2096779623
 import "pe"
 import "hash"
 
@@ -16,7 +17,7 @@ rule Backdoor_CobaltStrike_exe_x86
 rule Backdoor_CobaltStrike
 {
     meta:
-        description = "Backdoor.CobaltStrike"
+        description = "Backdoor.C2server"
         author = "awa"
         date = "2021-08-04"
     strings:
@@ -638,6 +639,104 @@ rule Power_base64 {
     strings:
         $a = {5F 43 6F 72 45 78 65 4D 61 69 6E 00 6D 73 63 6F 72 65 65 2E 64 6C 6C}
         $b = {50 53 4C 65 73 73 00 6D 73 63 6F 72 6C 69 62 00 53 79 73 74 65 6D 00 4F 62 6A 65 63 74 00 4D 61 69 6E 00 42 61 73 65 36 34 44 65 63 6F 64 65 00 52 75 6E 53 63 72 69 70 74 00 2E 63 74 6F 72 00 61 72 67 73 00 73 00 73 63 72 69 70 74 00 53 79 73 74 65 6D 2E 52 75 6E 74 69 6D 65 2E 43 6F 6D 70 69 6C 65 72 53 65 72 76 69 63 65 73 00 43 6F 6D 70 69 6C 61 74 69 6F 6E 52 65 6C 61 78 61 74 69 6F 6E 73 41 74 74 72 69 62 75 74 65 00 52 75 6E 74 69 6D 65 43 6F 6D 70 61 74 69 62 69 6C 69 74 79 41 74 74 72 69 62 75 74 65 00 70 6F 77 65 72 5F 62 61 73 65 36 34 00 45 6E 76 69 72 6F 6E 6D 65 6E 74 00 45 78 69 74 00 43 6F 6E 73 6F 6C 65 00 57 72 69 74 65 4C 69 6E 65 00 43 6F 6E 73 6F 6C 65 4B 65 79 49 6E 66 6F 00 52 65 61 64 4B 65 79 00 53 79 73 74 65 6D 2E 54 65 78 74 00 45 6E 63 6F 64 69 6E 67 00 67 65 74 5F 44 65 66 61 75 6C 74 00 43 6F 6E 76 65 72 74 00 46 72 6F 6D 42 61 73 65 36 34 53 74 72 69 6E 67 00 47 65 74 53 74 72 69 6E 67 00 53 79 73 74 65 6D 2E 4D 61 6E 61 67 65 6D 65 6E 74 2E 41 75 74 6F 6D 61 74 69 6F 6E 00 53 79 73 74 65 6D 2E 4D 61 6E 61 67 65 6D 65 6E 74 2E 41 75 74 6F 6D 61 74 69 6F 6E 2E 52 75 6E 73 70 61 63 65 73 00 52 75 6E 73 70 61 63 65 46 61 63 74 6F 72 79 00 52 75 6E 73 70 61 63 65 00 43 72 65 61 74 65 52 75 6E 73 70 61 63 65 00 4F 70 65 6E 00 50 69 70 65 6C 69 6E 65 00 43 72 65 61 74 65 50 69 70 65 6C 69 6E 65 00 43 6F 6D 6D 61 6E 64 43 6F 6C 6C 65 63 74 69 6F 6E 00 67 65 74 5F 43 6F 6D 6D 61 6E 64 73 00 41 64 64 53 63 72 69 70 74 00 41 64 64 00 53 79 73 74 65 6D 2E 43 6F 6C 6C 65 63 74 69 6F 6E 73 2E 4F 62 6A 65 63 74 4D 6F 64 65 6C 00 43 6F 6C 6C 65 63 74 69 6F 6E 60 31 00 50 53 4F 62 6A 65 63 74 00 49 6E 76 6F 6B 65 00 43 6C 6F 73 65 00 53 74 72 69 6E 67 42 75 69 6C 64 65 72 00 53 79 73 74 65 6D 2E 43 6F 6C 6C 65 63 74 69 6F 6E 73 2E 47 65 6E 65 72 69 63 00 49 45 6E 75 6D 65 72 61 74 6F 72 60 31 00 47 65 74 45 6E 75 6D 65 72 61 74 6F 72 00 67 65 74 5F 43 75 72 72 65 6E 74 00 54 6F 53 74 72 69 6E 67 00 41 70 70 65 6E 64 4C 69 6E 65 00 53 79 73 74 65 6D 2E 43 6F 6C 6C 65 63 74 69 6F 6E 73 00 49 45 6E 75 6D 65 72 61 74 6F 72 00 4D 6F 76 65 4E 65 78 74 00 49 44 69 73 70 6F 73 61 62 6C 65 00 44 69 73 70 6F 73 65 00 00 00 15 4F 00 75 00 74 00 2D 00 53 00 74 00 72 00 69 00 6E 00 67}
+    condition:
+        all of them
+}
+
+rule Application_BadJoke_G {
+    meta:
+        description = "Trojan.WinXPHorror"
+        date = "2021-09-19"
+        author = "awa"
+        hash1 = "350f397360397a8607613390ffae51dca3c35a2e92659db03ba6ef23f3704740"
+    strings:
+        $a = "Setup cannot copy the file ntdll.dll\r\nSetup will use the file 666.sys"
+        $b = "%s%s%s%s%s%s%s%s%s%s"
+        $c = "WHY YOU WANT TO CLOSE ME?"
+        $d = "Tick tock, goes the clock,"
+        $e = "And Now what shall we play?"
+        $f = "Now Summers gone away."
+        $g = "And then what shall we see?"
+        $h = "Tick tock, until the day,"
+        $i = "Till thou shalt marry me."
+        $j = "And all the years they fly,"
+        $k = "Tick tock, and all too soon,"
+        $l = "You and I must die"
+        $m = "I WILL HARM YOU IF YOU DOES NOT STOP!"
+        $n = "THE LAST WARNING!"
+        $o = "YOU MAKE YOUR CHOICE!"
+    condition:
+        all of them
+}
+
+rule Trojan_Win32_PurpleFox {
+    meta:
+        description = "Trojan.Win32.PurpleFox"
+        date = "2021-10-04"
+        author = "awa"
+        hash1 = "27178fb7aad699704a08b90b79f4768de6fc85efd2361929256e528841e03270"
+    strings:
+        $a = "F59C15B-606F-41F0-A8C1-1BCB429C7AB7}"
+        $b = "\t\t\t\t\\b\\b\\b\\b\\b\\b\\b\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a"
+        $c = "JobRelease\\win\\Release\\custact\\x86\\AICustAct.pdb"
+        $d = "\\JobRelease\\win\\Release\\custact\\x86\\Prereq.pdb"
+    condition:
+        2 of them
+}
+
+rule Worm_Win32_Bototer {
+    meta:
+        description = "Worm.Win32.Bototer"
+        date = "2021-10-05"
+        author = "awa"
+        hash1 = "2a78a8a9bae302f1f588d5ad056f33d0fb23d5af1d37b53d9bbe93faa7bbdd2c"
+    strings:
+        $a = "www.3-0B6F-415d-B5C7-832F0.com"
+        $b = "GET %s?%s HTTP/1.1\r\nConnection: Keep-Alive\r\nHost: %s\r\nUser-Agent: Mozilla/4.0\r\nAccept-language: cn\r\n\r\n"
+        $c = "96DBA249-E88E-4c47-98DC-E18E6E3E3E5A"
+        $d = "%s\\desktop.txt"
+        $e = "recycle.{645FF040-5081-101B-9F08-00AA002F954E}"
+    condition:
+        all of them
+}
+
+rule Worm_Win32_Almanahe_A {
+    meta:
+        description = "Worm.Win32.Almanahe.A"
+        date = "2021-10-05"
+        author = "awa"
+        hash1 = "7af31f54a8e40383b247abaadbf239e001cc1c728059470ef910ccbe5164ab22"
+    strings:
+        $a = "\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a\\a"
+        $b = "!^!Z!V!R!F!B!~!z!v!r!n!j!f!b!"
+        $c = "ppqj>|{>lkp>wp>ZQM>sqz{0"
+    condition:
+        2 of them
+}
+
+rule Worm_Win32_AutoRun_ttry_A {
+    meta:
+        description = "Worm.Win32.AutoRun.ttry.A"
+        date = "2021-10-05"
+        author = "awa"
+        hash1 = "78ffae9c11f885e7b0834ec8f5da1de141a77b5de695164fbb1ba85881fac13e"
+    strings:
+        $a = "C:\\windows\\ttry.exe"
+        $b = "C:\\windows\\tsay.exe"
+        $c = "XwwwwwwwwwwwwwwSSSTTpNJBllll"
+    condition:
+        all of them
+}
+
+rule Worm_Win32_Neshta_A {
+    meta:
+        description = "Worm.Win32.Neshta.A"
+        date = "2021-10-05"
+        author = "awa"
+        hash1 = "980bac6c9afe8efc9c6fe459a5f77213b0d8524eb00de82437288eb96138b9a2"
+    strings:
+        $a = "FPUMaskValue"
+        $b = {44 65 6C 70 68 69 2D 74 68 65 20 62 65 73 74 2E 20 46 75 63 6B 20 6F 66 66 20 61 6C 6C 20 74 68 65 20 72 65 73 74 2E 20 4E 65 73 68 74 61 20 31 2E 30 20 4D 61 64 65 20 69 6E 20 42 65 6C 61 72 75 73 2E}
     condition:
         all of them
 }
