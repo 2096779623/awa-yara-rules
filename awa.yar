@@ -739,3 +739,33 @@ rule Worm_Win32_Neshta_A {
     condition:
         all of them
 }
+
+
+rule Virus_Win32_Synaptic_A {
+    meta:
+        description = "Virus.Win32.Synaptic.A"
+        date = "2021-12-19"
+        author = "awa"
+        hash1 = "3f76784d4716ce6cd03f91bdb5d61a4c00552d33597666d29ea81cb4a8a6c052"
+    strings:
+        $name = "Synaptics"
+        $b = "Synaptics Pointing Device Driver"
+        $link1 = "http://freedns.afraid.org/api/?action=getdyndns&sha=a30fa98efc092684e8d1c5cff797bcc613562978"
+        $link2 = "https://docs.google.com/uc?id=0BxsMXGfPIZfSVlVsOGlEVGxuZVk&export=download"
+        $link3 = "https://www.dropbox.com/s/n1w4p8gc6jzo0sg/SUpdate.ini?dl=1"
+        $link4 = "http://xred.site50.net/syn/SUpdate.ini"
+    condition:
+        all of them
+}
+
+rule Separatists_Virus_V2 {
+    meta:
+        description = "Separatists.Virus.V2"
+        date = "2021-12-19"
+        author = "awa"
+        hash1 = "5d03f37231b5310b032ddf6d4d3a35b0ce8dee057ba83435a63c4291c46105fb"
+    strings:
+        $a = {83 58 F6 39 DD 02 00 00 00 00 38}
+    condition:
+        any of them
+} 
