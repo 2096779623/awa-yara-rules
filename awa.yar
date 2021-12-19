@@ -269,13 +269,9 @@ rule Virus_Win95_CIH_a {
         $file4 = "MPlifier.txtPK"
         $file5 = "MPlifier.txt"
         $keygen2 = {77 E2 56 CA 33 83 38 99 33 83 38 99 33 83 38 99 DB 9C 32 99 08 83 38 99 B0 9F 36 99 3D 83 38 99 33 83 39 99 7D 83 38 99 51 9C 2B 99 34 83 38 99 DB 9C 33 99 31 83 38 99 8B 85 3E 99 32 83 38 99 52 69 63 68 33 83 38 99 00}
-        $rar1 = "CMPlifier052.exe" ascii
         $rar2 = "MPLIFIER.BAT" ascii
-        $rar3 = "MICROSOFT PIFEX" ascii
         $rar4 = "del MPlifier.pif" ascii
         $rar5 = "del MPlifier.bat" ascii
-        $rar6 = "http://www.kagi.com/authors/giunti/\r\n"
-        $rar7 = "Internet: giunti@kagi.com\r\n"
     condition:
         2 of them
 }
