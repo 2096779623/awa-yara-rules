@@ -269,6 +269,7 @@ rule Virus_Win95_CIH_a {
         $file4 = "MPlifier.txtPK"
         $file5 = "MPlifier.txt"
         $keygen2 = {77 E2 56 CA 33 83 38 99 33 83 38 99 33 83 38 99 DB 9C 32 99 08 83 38 99 B0 9F 36 99 3D 83 38 99 33 83 39 99 7D 83 38 99 51 9C 2B 99 34 83 38 99 DB 9C 33 99 31 83 38 99 8B 85 3E 99 32 83 38 99 52 69 63 68 33 83 38 99 00}
+        $rar1 = "CMPlifier052.exe" ascii
         $rar2 = "MPLIFIER.BAT" ascii
         $rar4 = "del MPlifier.pif" ascii
         $rar5 = "del MPlifier.bat" ascii
@@ -765,3 +766,42 @@ rule Separatists_Virus_V2 {
     condition:
         any of them
 } 
+
+rule Smile_jpg {
+    meta:
+        description = "Smile.jpg"
+        date = "2021-12-21"
+        author = "awa"
+        hash1 = "b9625d91eb806513cac337a24ce5d8fe0b170554976b77fb1f2dad3981358f78"
+    strings:
+        $text = "正在销毁系统"
+        $reg1 = "software\\microsoft\\windows\\CurrentVersion\\Run\\kiss770.cn\\"
+        $taskkill1 = "taskkill /f /im kavsvc.exe"
+        $taskkill2 = "taskkill /f /im KVXP.kxp"
+        $taskkill3 = "taskkill /f /im Rav.exe"
+        $taskkill4 = "taskkill /f /im Ravmon.exe"
+        $taskkill5 = "taskkill /f /im Mcshield.exe"
+        $taskkill6 = "taskkill /f /im VsTskMgr.exe"
+        $sb3601 = "SOFTWARE\\360Safe\\safemon\\ExecAccess"
+        $sb3602 = "SOFTWARE\\360Safe\\safemon\\MonAccess"
+        $sb3603 = "SOFTWARE\\360Safe\\safemon\\SiteAccess"
+        $sb3604 = "SOFTWARE\\360Safe\\safemon\\UDiskAccess"
+        $sb3605 = "taskkill /f /im 360tray.exe"
+        $file = "jpegfile"
+        $text2 = "I Love YOU!"
+    condition:
+        6 of them
+}
+
+rule DiskLock {
+    meta:
+        description = "DiskLock"
+        date = "2021-12-21"
+        author = "awa"
+        hash1 = "e87dd96e36ec03b114a122eacc1bec6fc094390d98d5b6afd1e8dc27e0b94b48"
+    strings:
+        $pdbpath = "C:\\Users\\leo20\\source\\repos\\DiskLock\\Release\\DiskLock.pdb"
+        $b = "?5Wg4p"
+    condition:
+        all of them
+}
