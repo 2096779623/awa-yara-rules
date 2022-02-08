@@ -819,3 +819,38 @@ rule Ransom_000 {
     condition:
         all of them
 }
+
+rule Virus_Win32_Floxif_a {
+    meta:
+        description = "Virus.Win32.Floxif.a"
+        date = "2022-02-08"
+        author = "awa"
+        hash1 = "6842ada96f7d11938aa70a3124fc14d7c9f6cacaf9fa52b2dbd26a9b7d5fb899"
+    strings:
+        $a = "-64OS"
+        $b = {C7 3C 71 39 83 5D 1F 6A 83 5D 1F 6A 83 5D 1F 6A 3E 12 89 6A 82 5D 1F 6A 8A 25 8A 6A 9A 5D 1F 6A 8A 25 9C 6A 18 5D 1F 6A 8A 25 9B 6A BF 5D 1F 6A A4 9B 72 6A 84 5D 1F 6A A4 9B 64 6A 9C 5D 1F 6A 83 5D 1E 6A 94 5C 1F 6A 8A 25 95 6A 8C 5D 1F 6A 8A 25 8D 6A 82 5D 1F 6A 9D 0F 8B 6A 82 5D 1F 6A 8A 25 8E 6A 82 5D 1F 6A 52 69 63 68 83 5D 1F 6A}
+        $c = {E8 68 FA FF FF FF}
+        $d = {41 56 62 61 64 5F 65 78 63 65 70 74 69 6F 6E 40 73 74 64}
+    condition:
+        all of them
+}
+
+rule Virus_Win32_Floxif_b {
+    meta:
+        description = "Virus.Win32.Floxif.b"
+        date = "2022-02-08"
+        author = "awa"
+        hash1 = "eda99d18ec436be103b42766916e27ae66e444aa2e48436f9a249c93efb50829"
+    strings:
+        $reg1 = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Browser Helper Objects\\{B69F34DD-F0F9-42DC-9EDD-957187DA688D}"
+        $reg2 = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\App Paths\\IEXPLORE.EXE"
+        $reg3 = "CLSID\\{B69F34DD-F0F9-42DC-9EDD-957187DA688D}\\InprocServer32"
+        $reg4 = "Internet Explorer\\IEXPLORE.EXE" nocase
+        $url1 = "HTTP://*.BAIDU.COM/S*" nocase
+        $url2 = "HTTP://*.GOOGLE.COM.HK/SEARCH*" nocase
+        $url3 = "HTTP://*.SOSO.COM/Q*" nocase
+        $url4 = "HTTP://CN.BING.COM/SEARCH*" nocase
+        $url = "biz.com.edu.gov.info.int.mil.name.net.org.pro.aero.cat.coop.jobs.museum.travel.arpa.root.mobi.post.tel.asia.geo.kid.mail.sco.web.xxx.nato.example.invalid.test.bitnet.csnet.onion.uucp.xn--0zwm56d.xn--g6w251d" nocase
+    condition:
+        3 of them
+}
