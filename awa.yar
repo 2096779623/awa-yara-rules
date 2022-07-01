@@ -21,7 +21,7 @@ rule Backdoor_CobaltStrike
         author = "awa"
         date = "2021-08-04"
     strings:
-        $ = "%c%c%c%c%c%c%c%c%cMSSE-%d-server" fullword ascii
+        $ = "%c%c%c%c%c%c%c%c%cMSSE-%d-server" fullword ascii nocase
     condition:
         any of them
 }
@@ -853,4 +853,16 @@ rule Virus_Win32_Floxif_b {
         $url = "biz.com.edu.gov.info.int.mil.name.net.org.pro.aero.cat.coop.jobs.museum.travel.arpa.root.mobi.post.tel.asia.geo.kid.mail.sco.web.xxx.nato.example.invalid.test.bitnet.csnet.onion.uucp.xn--0zwm56d.xn--g6w251d" nocase
     condition:
         3 of them
+}
+
+rule Ransom_Win32_FRSCryptor {
+    meta:
+        description = "Ransom.Win32.FRSCryptor"
+        date = "2022-07-01"
+        hash1 = "72ebc223bef1bf4cabad9c7eb6e520f0d93554f2807d4c8875be24dc3ab129a4"
+    strings:
+        $a = {4D 73 00 00 60 2D 4A 00 6C 2D 4A 00 54 2D 4A}
+        $b = {47 65 74 4D 6F 64 75 6C 65 48 61 6E 64 6C 65 41 00 00 00 47 65 74 50 72 6F 63 41 64 64 72 65 73 73 00 4B 45 52 4E 45 4C 33 32 2E 44 4C 4C 00 6F 6C 65 61 75 74 33 32 2E 64 6C 6C 00 00 00 53 79 73 46 72 65 65 53 74 72 69 6E 67 00 61 64 76 61 70 69 33 32 2E 64 6C 6C 00 00 00 52 65 67 43 6C 6F 73 65 4B 65 79 00 75 73 65 72 33 32 2E 64 6C 6C 00 00 00 43 68 61 72 4E 65 78 74 41 00 53 48 46 6F 6C 64 65 72 2E 64 6C 6C 00 00 00 53 48 47 65 74 46 6F 6C 64 65 72 50 61 74 68 41}
+    condition:
+        all of them
 }
